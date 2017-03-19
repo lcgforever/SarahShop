@@ -1,0 +1,256 @@
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 800ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 800ms ease-in;
+}
+
+.mainDrawerHeaderContainer {
+  padding: 24px;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mainDrawerHeaderImage {
+  width: 34px;
+  height: 34px;
+}
+
+.mainDrawerHeaderTitle {
+  margin-left: 12px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.mainDrawerMenuItem {
+  padding: 0 8px !important;
+  font-size: 16px;
+}
+
+.mojoMenuContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loadingProgressBar {
+  margin: auto;
+}
+
+.mojoMenuListContainer {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 12px 48px;
+  overflow-y: auto;
+}
+
+.mojoMenuCategoryHeader {
+  font-size: 16px !important;
+  font-weight: bold !important;
+  padding: 2px 0 2px 0 !important;
+}
+
+.mojoMenuCardContainer {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.mojoMenuCard {
+  position: relative;
+}
+
+.mojoMenuImage {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.mojoMenuNewTagImage {
+  width: 80px;
+  height: 60px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 90;
+  outline: none;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.mojoMenuActionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mojoMenuDisableLayout {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0.3;
+}
+
+.mojoMenuDetailsContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 28px 120px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mojoMenuDetailsCategoryText {
+  margin-top: 40px;
+  font-size: 30px;
+  font-style: italic;
+  color: #444444;
+}
+
+.mojoMenuDetailsContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.mojoMenuDetailsImage {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mojoMenuDetailsInfoContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.mojoMenuDetailsInfoMargin {
+  width: 100%;
+  margin-Top: 24px;
+}
+
+.mojoMenuDetailsToppingMargin {
+  margin-Top: 10px;
+}
+
+.addToCartButton {
+  width: 200px;
+  margin-top: 48px;
+}
+
+@media screen and (max-width: 1199px){
+  .mojoMenuListContainer {
+    padding: 12px 72px;
+  }
+
+  .mojoMenuDetailsContainer {
+    padding: 28px 80px;
+  }
+
+  .mojoMenuDetailsInfoMargin {
+    width: 100%;
+    margin-Top: 16px;
+  }
+
+  .mojoMenuDetailsToppingMargin {
+    margin-Top: 8px;
+  }
+
+  .addToCartButton {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 991px){
+  .mojoMenuListContainer {
+    padding: 12px 96px;
+  }
+
+  .mojoMenuDetailsContainer {
+    padding: 28px 48px;
+  }
+
+  .mojoMenuDetailsInfoMargin {
+    width: 100%;
+    margin-Top: 6px;
+  }
+
+  .mojoMenuDetailsToppingMargin {
+    margin-Top: 4px;
+  }
+
+  .addToCartButton {
+    margin-top: 28px;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .mojoMenuListContainer {
+    padding: 12px 120px;
+  }
+
+  .mojoMenuDetailsContainer {
+    padding: 28px 96px;
+  }
+
+  .mojoMenuDetailsInfoMargin {
+    width: 100%;
+    margin-Top: 24px;
+  }
+
+  .mojoMenuDetailsToppingMargin {
+    margin-Top: 10px;
+  }
+
+  .addToCartButton {
+    margin-top: 44px;
+  }
+}
