@@ -9,7 +9,8 @@ const INITIAL_STATE = Map({
 export default function(state = INITIAL_STATE, action) {
   switch (action.type) {
     case SHOW_MESSAGE:
-    return state.set('showMessage', true).set('message', action.payload);
+    console.log('showing message: ' + action.data);
+    return state.set('showMessage', true).set('message', action.data);
 
     case HIDE_MESSAGE:
     return state.set('showMessage', false).set('message', '');

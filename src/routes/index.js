@@ -1,16 +1,14 @@
 import React from 'react';
-import { Route, IndexRoute, Redirect } from 'react-router';
 import App from '../components/app';
-import MojoMenu from '../containers/mojo_menu';
-import MojoMenuDetails from '../containers/mojo_menu_details';
-import Cart from '../containers/cart';
+import { Route, IndexRoute, Redirect } from 'react-router';
 import { loadData } from './routes_callback';
+import ProductList from '../containers/product_list';
+import ProductDetails from '../containers/product_details';
 
 export default (
   <Route path='/' component={App} onEnter={loadData()}>
-    <IndexRoute component={MojoMenu} />
-    <Route path='menu/:menuId' component={MojoMenuDetails} />
-    <Route path='cart' component={Cart} />
+    <IndexRoute component={ProductList} />
+    <Route path='product/:productId' component={ProductDetails} />
     <Redirect from='*' to='/' />
   </Route>
 )

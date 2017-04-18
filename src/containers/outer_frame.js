@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, browserHistory } from 'react-router';
-import { hideMessage } from '../actions/index';
-import { AppBarLeftButtonType } from '../constants';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
@@ -11,9 +9,8 @@ import Snackbar from 'material-ui/Snackbar';
 import IconButton from 'material-ui/IconButton';
 import DrawerMenu from 'material-ui/svg-icons/navigation/menu';
 import NavigationBack from 'material-ui/svg-icons/navigation/arrow-back';
-import ShoppingCart from 'material-ui/svg-icons/action/shopping-cart';
-import Badge from 'material-ui/Badge';
-import mojoHeaderImage from '../../resources/images/mojo_header.jpg';
+import { hideMessage } from '../actions/index';
+import { MAIN_TITLE, AppBarLeftButtonType } from '../constants';
 
 class OuterFrame extends Component {
 
@@ -24,7 +21,6 @@ class OuterFrame extends Component {
     };
     this.handleAppBarLeftButtonTap = this.handleAppBarLeftButtonTap.bind(this);
     this.handleMainDrawerToggle = this.handleMainDrawerToggle.bind(this);
-    this.handleAppBarRightButtonTap = this.handleAppBarRightButtonTap.bind(this);
     this.handleSnackbarActionTap = this.handleSnackbarActionTap.bind(this);
     this.renderAppBarLeftButton = this.renderAppBarLeftButton.bind(this);
   }
@@ -46,10 +42,6 @@ class OuterFrame extends Component {
     this.setState({
       mainDrawerOpen: !this.state.mainDrawerOpen
     });
-  }
-
-  handleAppBarRightButtonTap() {
-    browserHistory.push('/cart');
   }
 
   handleSnackbarActionTap() {
@@ -75,47 +67,20 @@ class OuterFrame extends Component {
     }
   }
 
-  renderAppBarRightButton() {
-    if (this.props.orderItemCount > 0) {
-      const badgeContent = this.props.orderItemCount > 9 ? '9+' : this.props.orderItemCount;
-      return (
-        <Badge
-          badgeContent={badgeContent}
-          secondary={true}
-          style={{ padding: 0, color: 'white' }}
-          badgeStyle={{ width: '18px', height: '18px', top: '4px', right: '4px' }}
-          onTouchTap={this.handleAppBarRightButtonTap}>
-          <IconButton tooltip='Cart'>
-            <ShoppingCart color='white' />
-          </IconButton>
-        </Badge>
-      );
-    } else {
-      return (
-        <IconButton tooltip='Cart' onTouchTap={this.handleAppBarRightButtonTap}>
-          <ShoppingCart color='white' />
-        </IconButton>
-      );
-    }
-  }
-
   render() {
     return (
       <div>
         <AppBar
           title={this.props.appBarTitle}
           iconElementLeft={this.renderAppBarLeftButton()}
-          iconElementRight={this.renderAppBarRightButton()}
           iconStyleLeft={{ marginLeft: '-6px' }}
-          iconStyleRight={{ marginRight: '-6px' }}
           onLeftIconButtonTouchTap={this.handleAppBarLeftButtonTap} />
         <Drawer
           docked={false}
           open={this.state.mainDrawerOpen}
           onRequestChange={this.handleMainDrawerToggle}>
           <div className='mainDrawerHeaderContainer'>
-            <img className='mainDrawerHeaderImage' src={mojoHeaderImage} />
-            <p className='mainDrawerHeaderTitle'>Mojo Teahouse</p>
+            <p className='mainDrawerHeaderTitle'>{MAIN_TITLE}</p>
           </div>
           <Divider />
           <Link to='/'>
@@ -135,20 +100,11 @@ class OuterFrame extends Component {
 }
 
 function mapStateToProps(state) {
-  let orderItemCount = 0;
-  if (localStorage.orderItemList) {
-    const orderItemList = JSON.parse(localStorage.orderItemList);
-    orderItemList.map((orderItem) => {
-      orderItemCount += orderItem.quantity;
-    });
-  }
-
   return {
     showMessage: state.getIn(['messageState', 'showMessage']),
     message: state.getIn(['messageState', 'message']),
     appBarLeftButtonType: state.getIn(['appBarState', 'appBarLeftButtonType']),
-    appBarTitle: state.getIn(['appBarState', 'appBarTitle']),
-    orderItemCount: orderItemCount
+    appBarTitle: state.getIn(['appBarState', 'appBarTitle'])
   };
 }
 

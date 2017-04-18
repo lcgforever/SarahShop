@@ -48,7 +48,7 @@ body {
   font-size: 16px;
 }
 
-.mojoMenuContainer {
+.allProductsContainer {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -63,7 +63,7 @@ body {
   margin: auto;
 }
 
-.mojoMenuListContainer {
+.productTabContentContainer {
   position: relative;
   box-sizing: border-box;
   width: 100%;
@@ -73,22 +73,27 @@ body {
   overflow-y: auto;
 }
 
-.mojoMenuCategoryHeader {
+.productTabGridContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.productCategoryHeader {
   font-size: 16px !important;
   font-weight: bold !important;
   padding: 2px 0 2px 0 !important;
 }
 
-.mojoMenuCardContainer {
+.productCardContainer {
   padding-top: 12px !important;
   padding-bottom: 12px !important;
 }
 
-.mojoMenuCard {
+.productCard {
   position: relative;
 }
 
-.mojoMenuImage {
+.productImage {
   position: relative;
   width: 200px;
   height: 200px;
@@ -96,38 +101,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.mojoMenuNewTagImage {
-  width: 80px;
-  height: 60px;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 90;
-  outline: none;
-  -khtml-user-select: none;
-  -o-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-.mojoMenuActionContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.mojoMenuDisableLayout {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #000000;
-  opacity: 0.3;
-}
-
-.mojoMenuDetailsContainer {
+.productDetailsContainer {
   position: relative;
   width: 100%;
   height: 100%;
@@ -139,20 +113,13 @@ body {
   align-items: center;
 }
 
-.mojoMenuDetailsCategoryText {
-  margin-top: 40px;
-  font-size: 30px;
-  font-style: italic;
-  color: #444444;
-}
-
-.mojoMenuDetailsContent {
+.productDetailsContent {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.mojoMenuDetailsImage {
+.productDetailsImage {
   position: relative;
   width: 100%;
   height: 0;
@@ -162,7 +129,7 @@ body {
   background-size: cover;
 }
 
-.mojoMenuDetailsInfoContainer {
+.productDetailsInfoContainer {
   position: relative;
   width: 100%;
   height: 100%;
@@ -172,85 +139,32 @@ body {
   align-items: flex-start;
 }
 
-.mojoMenuDetailsInfoMargin {
-  width: 100%;
-  margin-Top: 24px;
-}
-
-.mojoMenuDetailsToppingMargin {
-  margin-Top: 10px;
-}
-
-.addToCartButton {
-  width: 200px;
-  margin-top: 48px;
-}
-
 @media screen and (max-width: 1199px){
-  .mojoMenuListContainer {
+  .productTabContentContainer {
     padding: 12px 72px;
   }
 
-  .mojoMenuDetailsContainer {
+  .productDetailsContainer {
     padding: 28px 80px;
-  }
-
-  .mojoMenuDetailsInfoMargin {
-    width: 100%;
-    margin-Top: 16px;
-  }
-
-  .mojoMenuDetailsToppingMargin {
-    margin-Top: 8px;
-  }
-
-  .addToCartButton {
-    margin-top: 40px;
   }
 }
 
 @media screen and (max-width: 991px){
-  .mojoMenuListContainer {
+  .productTabContentContainer {
     padding: 12px 96px;
   }
 
-  .mojoMenuDetailsContainer {
+  .productDetailsContainer {
     padding: 28px 48px;
-  }
-
-  .mojoMenuDetailsInfoMargin {
-    width: 100%;
-    margin-Top: 6px;
-  }
-
-  .mojoMenuDetailsToppingMargin {
-    margin-Top: 4px;
-  }
-
-  .addToCartButton {
-    margin-top: 28px;
   }
 }
 
 @media screen and (max-width: 767px){
-  .mojoMenuListContainer {
+  .productTabContentContainer {
     padding: 12px 120px;
   }
 
-  .mojoMenuDetailsContainer {
+  .productDetailsContainer {
     padding: 28px 96px;
-  }
-
-  .mojoMenuDetailsInfoMargin {
-    width: 100%;
-    margin-Top: 24px;
-  }
-
-  .mojoMenuDetailsToppingMargin {
-    margin-Top: 10px;
-  }
-
-  .addToCartButton {
-    margin-top: 44px;
   }
 }
